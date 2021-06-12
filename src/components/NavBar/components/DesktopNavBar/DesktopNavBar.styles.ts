@@ -7,8 +7,8 @@ export const Container = styled.div`
   height: 80px;
   padding: 1em 10%;
 
-  background: #1e1f2f;
-  box-shadow: 10px 10px 10px #0000004d;
+  background: rgba(30, 31, 47, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 
   display: flex;
   justify-content: space-between;

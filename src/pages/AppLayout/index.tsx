@@ -6,8 +6,8 @@ import background from '@assets/backgound/BG ACASO pt01 blue.json';
 import { Container, BackgoundContainer, AppContainer } from './styles';
 
 const defaultOptions = {
-  loop: false,
-  autoplay: false,
+  loop: true,
+  autoplay: true,
   animationData: background,
   rendererSettings: {
     preserveAspectRatio: 'xMidYMid slice',
