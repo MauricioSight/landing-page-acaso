@@ -9,17 +9,12 @@ export const BaseButtonStyle = styled.button`
   font-size: 0.78em;
   font-weight: 600;
 
-  transition: transform 350ms ease-in-out;
-  transition: opacity 500ms ease-in-out;
+  transition: transform 350ms ease-in-out, opacity 500ms ease-in-out;
   transform: scale(0.9);
   opacity: 1;
 
   :hover,
   :focus {
     transform: scale(1);
-  }
-
-  :active {
-    opacity: 0.7;
   }
 `;
