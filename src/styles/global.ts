@@ -14,6 +14,8 @@ export const Global = createGlobalStyle`
       background-color: #ffffff;
       text-rendering: optimizedlegibility;
       -webkit-font-smoothing: antialiased;
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
     }
   }
 `;
