@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 import throttle from 'lodash.throttle';
 
+import { usePageController } from '@/contexts/PagesController';
 import getLottieOptions from './utils/getLottieOptions';
 import { PageControllerProps } from './interfaces';
 import Main from './PageController';
@@ -18,10 +19,13 @@ const PageController: React.FC<PageControllerProps> = ({
   defaultLottieOptions,
   initialPage,
   onChangePage,
+  onNextPage,
+  onPrevPage,
   children,
 }) => {
   const lottieRef = useRef<any>(null);
   const [currentPage, setcurrentPage] = useState(initialPage || 0);
+  const { changeAnimationPage } = usePageController();
 
   const playSegment = useCallback(
     (direction: 1 | -1) => {
@@ -62,6 +66,24 @@ const PageController: React.FC<PageControllerProps> = ({
     [currentPage, breakPoints, onChangePage],
   );
 
+  const onCompletedAnimation = () => {
+    const {
+      anim: { currentFrame, firstFrame },
+    } = lottieRef?.current;
+
+    if (
+      currentFrame + firstFrame + 1 ===
+      breakPoints[breakPoints.length - 1][1]
+    ) {
+      onNextPage?.();
+      changeAnimationPage('next');
+    }
+    if (currentFrame + firstFrame < 5) {
+      onPrevPage?.();
+      changeAnimationPage('prev');
+    }
+  };
+
   const scrollHandler = useCallback(
     (event: WheelEvent) => {
       if (event.deltaY > 0) {
@@ -87,6 +109,7 @@ const PageController: React.FC<PageControllerProps> = ({
   return (
     <Main
       lottieRef={lottieRef}
+      onCompletedAnimation={onCompletedAnimation}
       lottieOptions={getLottieOptions({
         animationJson,
         initialPage,

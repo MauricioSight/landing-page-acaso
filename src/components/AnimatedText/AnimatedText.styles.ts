@@ -1,26 +1,6 @@
 import styled from 'styled-components';
 
-// Text
-
-const animationStateEnum = {
-  'show-up': 'show-up',
-  'show-down': 'show-down',
-  'hide-up': 'hide-up',
-  'hide-down': 'hide-down',
-};
-
-export type AnimationState = keyof typeof animationStateEnum;
-
-export interface AnimationConfig {
-  showDelay?: string;
-  showDuration?: string;
-  hideDelay?: string;
-  hideDuration?: string;
-}
-interface TextProps {
-  animationState?: AnimationState;
-  animationConfig?: AnimationConfig;
-}
+import { TextProps } from './interfaces';
 
 export const DesciptionContainer = styled.div<TextProps>`
   flex: 1;

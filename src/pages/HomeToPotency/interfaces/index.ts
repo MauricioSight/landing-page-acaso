@@ -1,13 +1,13 @@
-import { AnimationState } from '../Home.styles';
+import { AnimationState } from '@components/AnimatedText/interfaces';
 
 const pageStatus = {
-  'first-text': 'first-text',
-  'second-text': 'second-text',
+  home: 'home',
+  potency: 'potency',
 };
 
 export type PageStatus = keyof typeof pageStatus;
 
-export interface HomePageProps {
+export interface HomeToPotencyProps {
   animationState: AnimationState;
   pageStatus: PageStatus;
   handleChangePage: (page: number) => void;

@@ -15,11 +15,9 @@ import {
 } from './interfaces';
 
 const pageOrder: PageAnimationEnum[] = [
-  'home_potency',
-  'time-machine_universe',
-  'competition',
-  'coincidence',
-  'more',
+  'home-potency',
+  'time-machine-universe',
+  'coincidence-see-more',
 ];
 
 export const pagesControllerReducer: PagesControllerReducer = (

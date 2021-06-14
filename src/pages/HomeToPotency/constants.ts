@@ -1,4 +1,4 @@
-export const HOME_PAGE_BREAK_POINTS = [
+export const HOME_POTENCY_BREAK_POINTS = [
   [0, 425],
   [425, 830],
   [830, 1370],

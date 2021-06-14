@@ -8,10 +8,21 @@ const PageController: React.FC<PageControllerMainProps> = ({
   lottieRef,
   lottieOptions,
   children,
+  onCompletedAnimation,
 }) => {
   return (
     <Container>
-      <Lottie ref={lottieRef} options={lottieOptions} isClickToPauseDisabled />
+      <Lottie
+        ref={lottieRef}
+        options={lottieOptions}
+        isClickToPauseDisabled
+        eventListeners={[
+          {
+            eventName: 'complete',
+            callback: onCompletedAnimation,
+          },
+        ]}
+      />
       <SecondLayer>{children}</SecondLayer>
     </Container>
   );
