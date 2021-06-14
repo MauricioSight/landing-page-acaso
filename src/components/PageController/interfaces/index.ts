@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface BasePageControllProps {
+export interface PageControllerProps {
   breakPoints: number[][];
   animationJson: any;
   defaultLottieOptions?: any;
@@ -8,7 +8,7 @@ export interface BasePageControllProps {
   onChangePage?: (page: number) => void;
 }
 
-export interface BasePageMainProps {
+export interface PageControllerMainProps {
   lottieRef: React.LegacyRef<any>;
   lottieOptions: any;
 }
