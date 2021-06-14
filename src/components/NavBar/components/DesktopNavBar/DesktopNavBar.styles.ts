@@ -9,6 +9,7 @@ export const Container = styled.div`
 
   background: rgba(30, 31, 47, 0.3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
 
   display: flex;
   justify-content: space-between;
