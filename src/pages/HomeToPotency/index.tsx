@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-expressions */
 import React, { useCallback, useState } from 'react';
 
+import { AnimationState } from '@components/AnimatedText/interfaces';
 import { usePageController } from '@/contexts/PagesController';
 import { PageStatus } from './interfaces';
-import { AnimationState } from './HomeToPotency.styles';
 import Main from './HomeToPotency';
 
 const HomeToPotency: React.FC = () => {

@@ -1,4 +1,4 @@
-import { AnimationState } from '../HomeToPotency.styles';
+import { AnimationState } from '@components/AnimatedText/interfaces';
 
 const pageStatus = {
   home: 'home',

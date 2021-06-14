@@ -6,7 +6,7 @@ import {
   DesciptionH2,
   DesciptionH3,
   DesciptionH4,
-} from '@pages/HomeToPotency/HomeToPotency.styles';
+} from '@components/AnimatedText/AnimatedText.styles';
 import { HomePageMainProps } from './interfaces';
 
 const Home: React.FC<HomePageMainProps> = ({ animationState }) => {

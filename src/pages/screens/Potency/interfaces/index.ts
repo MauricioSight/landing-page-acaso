@@ -1,4 +1,4 @@
-import { AnimationState } from '@pages/HomeToPotency/HomeToPotency.styles';
+import { AnimationState } from '@components/AnimatedText/interfaces';
 
 export interface PotencyPageProps {
   animationState: AnimationState;

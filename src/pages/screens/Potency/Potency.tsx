@@ -4,7 +4,7 @@ import {
   DesciptionContainer,
   DesciptionH2,
   DesciptionH3,
-} from '@pages/HomeToPotency/HomeToPotency.styles';
+} from '@components/AnimatedText/AnimatedText.styles';
 import { PotencyPageMainProps } from './interfaces';
 
 const Portency: React.FC<PotencyPageMainProps> = ({ animationState }) => {
