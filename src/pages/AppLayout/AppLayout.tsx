@@ -1,11 +1,10 @@
 import React from 'react';
 
 import Navbar from '@components/NavBar';
-import HomeSection from '@pages/Home';
 import BackgoundAnimated from '@pages/BackgoundAnimated';
 import { Container, BackgoundContainer, AppContainer } from './styles';
 
-const AppLayout: React.FC = () => {
+const AppLayout: React.FC = ({ children }) => {
   return (
     <Container>
       <BackgoundContainer>
@@ -13,7 +12,7 @@ const AppLayout: React.FC = () => {
       </BackgoundContainer>
       <AppContainer>
         <Navbar />
-        <HomeSection />
+        {children}
       </AppContainer>
     </Container>
   );

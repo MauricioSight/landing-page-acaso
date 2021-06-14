@@ -1,7 +1,7 @@
 import React from 'react';
 import Lottie from 'react-lottie';
 
-import background from '@assets/backgound/BG ACASO pt01 blue.json';
+import background from '@assets/background.json';
 
 const defaultOptions = {
   loop: true,
