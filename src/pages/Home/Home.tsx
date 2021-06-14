@@ -1,7 +1,7 @@
 import React from 'react';
 
 import homeAnimationJson from '@assets/ACASO pt01.json';
-import BasePageControll from '@/components/BasePageControll';
+import PageController from '@/components/PageController';
 import { HOME_PAGE_BREAK_POINTS } from './constants';
 import { HomePageProps } from './interfaces';
 import {
@@ -18,7 +18,7 @@ const Home: React.FC<HomePageProps> = ({
   handleChangePage,
 }) => {
   return (
-    <BasePageControll
+    <PageController
       animationJson={homeAnimationJson}
       breakPoints={HOME_PAGE_BREAK_POINTS}
       onChangePage={handleChangePage}
@@ -75,7 +75,7 @@ const Home: React.FC<HomePageProps> = ({
           </DesciptionH3>
         </DesciptionContainer>
       )}
-    </BasePageControll>
+    </PageController>
   );
 };
 

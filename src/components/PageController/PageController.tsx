@@ -1,10 +1,10 @@
 import React from 'react';
 import Lottie from 'react-lottie';
 
-import { BasePageMainProps } from './interfaces';
-import { Container, SecondLayer } from './BasePageControll.styles';
+import { PageControllerMainProps } from './interfaces';
+import { Container, SecondLayer } from './PageController.styles';
 
-const BasePageControll: React.FC<BasePageMainProps> = ({
+const PageController: React.FC<PageControllerMainProps> = ({
   lottieRef,
   lottieOptions,
   children,
@@ -17,4 +17,4 @@ const BasePageControll: React.FC<BasePageMainProps> = ({
   );
 };
 
-export default BasePageControll;
+export default PageController;

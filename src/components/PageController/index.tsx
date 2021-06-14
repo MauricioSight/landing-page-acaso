@@ -9,10 +9,10 @@ import React, {
 import throttle from 'lodash.throttle';
 
 import getLottieOptions from './utils/getLottieOptions';
-import { BasePageControllProps } from './interfaces';
-import Main from './BasePageControll';
+import { PageControllerProps } from './interfaces';
+import Main from './PageController';
 
-const BasePageControll: React.FC<BasePageControllProps> = ({
+const PageController: React.FC<PageControllerProps> = ({
   animationJson,
   breakPoints,
   defaultLottieOptions,
@@ -99,4 +99,4 @@ const BasePageControll: React.FC<BasePageControllProps> = ({
   );
 };
 
-export default BasePageControll;
+export default PageController;
