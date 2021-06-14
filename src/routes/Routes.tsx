@@ -13,12 +13,8 @@ const renderPage = (page: PageAnimationEnum) => {
       return <Home />;
     case 'time-machine_universe':
       return <TimeMachine />;
-    case 'competition':
-      return <h1>competition</h1>;
     case 'coincidence':
       return <Coincidence />;
-    case 'more':
-      return <h1>more</h1>;
     default:
       return null;
   }

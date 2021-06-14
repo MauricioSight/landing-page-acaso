@@ -17,7 +17,6 @@ import {
 const pageOrder: PageAnimationEnum[] = [
   'home_potency',
   'time-machine_universe',
-  'competition',
   'coincidence',
   'more',
 ];
