@@ -1,26 +1,29 @@
 import React from 'react';
-import Lottie from 'react-lottie';
 
-import { HomePageProps } from './interfaces/indext';
+import homeAnimationJson from '@assets/ACASO pt01.json';
+import BasePageControll from '@/components/BasePageControll';
+import { HOME_PAGE_BREAK_POINTS } from './constants';
+import { HomePageProps } from './interfaces';
 import {
-  Container,
-  SecondLayer,
   DesciptionContainer,
   DesciptionH1,
   DesciptionH2,
   DesciptionH3,
   DesciptionH4,
-} from './styles';
+} from './Home.styles';
 
 const Home: React.FC<HomePageProps> = ({
-  lottieRef,
-  lottieOptions,
   animationState,
+  pageStatus,
+  handleChangePage,
 }) => {
   return (
-    <Container>
-      <Lottie ref={lottieRef} options={lottieOptions} isClickToPauseDisabled />
-      <SecondLayer>
+    <BasePageControll
+      animationJson={homeAnimationJson}
+      breakPoints={HOME_PAGE_BREAK_POINTS}
+      onChangePage={handleChangePage}
+    >
+      {pageStatus === 'first-text' ? (
         <DesciptionContainer animationState={animationState}>
           <DesciptionH1 animationState={animationState}>
             Se conecte com
@@ -35,8 +38,44 @@ const Home: React.FC<HomePageProps> = ({
             Chegar na sua melhor versão
           </DesciptionH4>
         </DesciptionContainer>
-      </SecondLayer>
-    </Container>
+      ) : (
+        <DesciptionContainer animationState={animationState}>
+          <DesciptionH2
+            animationState={animationState}
+            animationConfig={{
+              showDelay: '2500ms',
+              hideDelay: '5500ms',
+              hideDuration: '1150ms',
+            }}
+            style={{ textShadow: 'none', fontSize: '3em' }}
+          >
+            Não importa onde,
+            <br />
+            Importa com quem
+          </DesciptionH2>
+          <DesciptionH3
+            animationState={animationState}
+            animationConfig={{
+              showDelay: '3000ms',
+              hideDelay: '5500ms',
+              hideDuration: '1150ms',
+            }}
+          >
+            Independente do lugar, sua potência máxima é atingida
+          </DesciptionH3>
+          <DesciptionH3
+            animationState={animationState}
+            animationConfig={{
+              showDelay: '3500ms',
+              hideDelay: '5500ms',
+              hideDuration: '1150ms',
+            }}
+          >
+            Quando você está com pessoas certas.
+          </DesciptionH3>
+        </DesciptionContainer>
+      )}
+    </BasePageControll>
   );
 };
 
