@@ -1,14 +1,16 @@
 /* eslint-disable no-unused-expressions */
 import React, { useCallback, useState } from 'react';
 
+import { usePageController } from '@/contexts/PagesController';
 import { PageStatus } from './interfaces';
-import { AnimationState } from './Home.styles';
-import Main from './Home';
+import { AnimationState } from './HomeToPotency.styles';
+import Main from './HomeToPotency';
 
-const Home: React.FC = () => {
+const HomeToPotency: React.FC = () => {
   const [animationState, setAnimationState] =
     useState<AnimationState>('show-up');
-  const [pageStatus, setPageStatus] = useState<PageStatus>('first-text');
+  const [pageStatus, setPageStatus] = useState<PageStatus>('home');
+  const { setPage } = usePageController();
 
   const handleChangePage = useCallback((page: number) => {
     switch (page) {
@@ -20,7 +22,8 @@ const Home: React.FC = () => {
         break;
       case 3:
         setAnimationState('show-up');
-        setPageStatus('second-text');
+        setPageStatus('potency');
+        setPage('potency');
         break;
       case 4:
         setAnimationState('hide-down');
@@ -38,4 +41,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default HomeToPotency;

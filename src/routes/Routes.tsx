@@ -3,18 +3,18 @@ import React from 'react';
 import AppLayout from '@pages/AppLayout';
 import { usePageController } from '@/contexts/PagesController';
 import { PageAnimationEnum } from '@/contexts/PagesController/interfaces';
-import Home from '@/pages/Home';
-import TimeMachine from '@pages/TimeMachine';
-import Coincidence from '@/pages/Coincidence';
+import HomeToPotency from '@/pages/HomeToPotency';
+import TimeMachineToUniverse from '@/pages/TimeMachineToUniverse';
+import CoincidenceToSeeMore from '@/pages/CoincidenceToSeeMore';
 
 const renderPage = (page: PageAnimationEnum) => {
   switch (page) {
-    case 'home_potency':
-      return <Home />;
-    case 'time-machine_universe':
-      return <TimeMachine />;
-    case 'coincidence':
-      return <Coincidence />;
+    case 'home-potency':
+      return <HomeToPotency />;
+    case 'time-machine-universe':
+      return <TimeMachineToUniverse />;
+    case 'coincidence-see-more':
+      return <CoincidenceToSeeMore />;
     default:
       return null;
   }
