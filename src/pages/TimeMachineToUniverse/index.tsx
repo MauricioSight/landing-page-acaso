@@ -1,13 +1,9 @@
 import React from 'react';
 
-import { Container } from './styles';
+import Main from './TimeMachineToUniverse';
 
 const TimeMachineToUniverse: React.FC = () => {
-  return (
-    <Container>
-      <h1>TimeMachineToUniverse</h1>
-    </Container>
-  );
+  return <Main />;
 };
 
 export default TimeMachineToUniverse;

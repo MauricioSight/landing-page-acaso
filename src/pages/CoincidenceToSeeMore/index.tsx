@@ -1,13 +1,9 @@
 import React from 'react';
 
-import { Container } from './styles';
+import Main from './CoincidenceToSeeMore';
 
 const CoincidenceToSeeMore: React.FC = () => {
-  return (
-    <Container>
-      <h1>CoincidenceToSeeMore</h1>
-    </Container>
-  );
+  return <Main />;
 };
 
 export default CoincidenceToSeeMore;
