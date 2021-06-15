@@ -96,7 +96,7 @@ const PageController: React.FC<PageControllerProps> = ({
   );
 
   const throttleScrollHandler = useMemo(
-    () => throttle(scrollHandler, 2000, { trailing: false, leading: true }),
+    () => throttle(scrollHandler, 1000, { trailing: false, leading: true }),
     [scrollHandler],
   );
 

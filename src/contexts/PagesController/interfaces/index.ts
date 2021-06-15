@@ -9,9 +9,8 @@ const pageEnum = {
   home: 'home',
   potency: 'potency',
   'time-machine': 'time-machine',
-  competition: 'competition',
+  universe: 'universe',
   coincidence: 'coincidence',
-  'see-more': 'see-more',
 };
 export type PageEnum = keyof typeof pageEnum;
 
