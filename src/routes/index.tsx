@@ -5,7 +5,7 @@ import Routes from './Routes';
 
 const routes: React.FC = () => {
   return (
-    <PagesControllerProvider initialPage="time-machine-universe">
+    <PagesControllerProvider initialPage="home-potency">
       <Routes />
     </PagesControllerProvider>
   );
