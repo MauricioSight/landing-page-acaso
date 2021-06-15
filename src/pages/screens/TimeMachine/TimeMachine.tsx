@@ -68,7 +68,7 @@ const TimeMachine: React.FC<TimeMachinePageMainProps> = ({
               animationState={animationState}
               animationConfig={{
                 showDelay: '1150ms',
-                hideDelay: '700ms',
+                hideDelay: '0ms',
                 hideDuration: '1150ms',
               }}
               style={{ textShadow: 'none', fontSize: '3em' }}

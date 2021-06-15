@@ -1,13 +1,9 @@
 import React from 'react';
 
-import { Container } from './styles';
+import Main from './SeeMore';
 
 const SeeMore: React.FC = () => {
-  return (
-    <Container>
-      <h1>SeeMore</h1>
-    </Container>
-  );
+  return <Main />;
 };
 
 export default SeeMore;

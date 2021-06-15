@@ -83,7 +83,7 @@ export const DesciptionContainer = styled.div<TextProps>`
   }
 `;
 
-export const DesciptionH1 = styled.div<TextProps>`
+export const DesciptionH1 = styled.p<TextProps>`
   text-align: center;
   color: #ffffff;
   font-size: 2em;
@@ -124,7 +124,7 @@ export const DesciptionH1 = styled.div<TextProps>`
   }}
 `;
 
-export const DesciptionH2 = styled.div<TextProps>`
+export const DesciptionH2 = styled.p<TextProps>`
   text-align: center;
   color: #ffffff;
   font-weight: bold;
@@ -169,7 +169,7 @@ export const DesciptionH2 = styled.div<TextProps>`
   margin-bottom: 0.7em;
 `;
 
-export const DesciptionH3 = styled.div<TextProps>`
+export const DesciptionH3 = styled.p<TextProps>`
   text-align: center;
   color: #ffffff;
   font-size: 0.8em;
@@ -210,7 +210,7 @@ export const DesciptionH3 = styled.div<TextProps>`
   }}
 `;
 
-export const DesciptionH4 = styled.div<TextProps>`
+export const DesciptionH4 = styled.p<TextProps>`
   text-align: center;
   color: #ffffff;
   font-size: 0.8em;

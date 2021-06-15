@@ -4,7 +4,6 @@ import { UniversePageProps } from './interfaces';
 import Main from './Universe';
 
 const Universe: React.FC<UniversePageProps> = (props) => {
-  console.log(props);
   return <Main {...props} />;
 };
 

@@ -7,6 +7,10 @@ export const Global = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  p {
+    margin: 0;
+  }
+
   :root {
     body > #root {
       height: 100vh;

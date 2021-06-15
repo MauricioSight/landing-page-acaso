@@ -28,6 +28,14 @@ export const pagesControllerReducer: PagesControllerReducer = (
     case 'set-page':
       return { ...state, currentPage: action.page };
     case 'change-animation-page':
+      if (
+        (action.page === 'next' &&
+          pageOrder.indexOf(state.currentAnimationPage) + 1 ===
+            pageOrder.length) ||
+        (action.page === 'prev' &&
+          pageOrder.indexOf(state.currentAnimationPage) - 1 < 0)
+      )
+        return state;
       return {
         ...state,
         currentAnimationPage:
