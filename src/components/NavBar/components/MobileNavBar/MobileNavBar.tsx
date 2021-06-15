@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { PageEnum, pageEnum } from '../../interfaces';
 import NavItem from '../NavItem';
 import NavDrawer from './components/NavDrawer';
 import { MobileNavBarMainProps } from './interfaces';
@@ -15,11 +16,32 @@ import {
   DrawerFooter,
 } from './MobileNavBar.styles';
 
+const renderNavItem = (
+  page: PageEnum,
+  currentPage: PageEnum,
+  onNavegate: (goToPage: PageEnum) => void,
+) => {
+  return (
+    <NavItem
+      key={page}
+      isShowing={currentPage === page}
+      onNavegate={() => onNavegate(page)}
+      translateTextOff
+    >
+      {pageEnum[page]}
+    </NavItem>
+  );
+};
+
 const MobileNavBar: React.FC<MobileNavBarMainProps> = ({
   visible,
+  currentPage,
+  onNavegate,
   onOpenMenu,
   onCloseMenu,
 }) => {
+  const pages = Object.keys(pageEnum);
+
   return (
     <Container>
       <LogoNav>ACASO</LogoNav>
@@ -31,12 +53,11 @@ const MobileNavBar: React.FC<MobileNavBarMainProps> = ({
             <CloseIcon onClick={onCloseMenu} />
           </DrawerHeader>
           <Nav>
-            <NavItem translateTextOff>ACASO</NavItem>
-            <NavItem translateTextOff>Sua potência</NavItem>
-            <NavItem translateTextOff>Máquina do tempo</NavItem>
-            <NavItem translateTextOff>Universo</NavItem>
-            <NavItem translateTextOff>Concorrência</NavItem>
-            <NavItem translateTextOff>Contato</NavItem>
+            {pages.map((key, index) =>
+              index === 0
+                ? null
+                : renderNavItem(key as PageEnum, currentPage, onNavegate),
+            )}
           </Nav>
           <DrawerFooter>
             <WhiteButton>Explore Acaso</WhiteButton>

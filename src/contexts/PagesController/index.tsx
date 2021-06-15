@@ -8,45 +8,10 @@ import React, {
 import {
   PagesControllerContextData,
   PagesControllerData,
-  PagesControllerReducer,
   PageEnum,
-  PageAnimationEnum,
   PagesControllerProps,
 } from './interfaces';
-
-const pageOrder: PageAnimationEnum[] = [
-  'home-potency',
-  'time-machine-universe',
-  'coincidence-see-more',
-];
-
-export const pagesControllerReducer: PagesControllerReducer = (
-  state,
-  action,
-) => {
-  switch (action.type) {
-    case 'set-page':
-      return { ...state, currentPage: action.page };
-    case 'change-animation-page':
-      if (
-        (action.page === 'next' &&
-          pageOrder.indexOf(state.currentAnimationPage) + 1 ===
-            pageOrder.length) ||
-        (action.page === 'prev' &&
-          pageOrder.indexOf(state.currentAnimationPage) - 1 < 0)
-      )
-        return state;
-      return {
-        ...state,
-        currentAnimationPage:
-          action.page === 'next'
-            ? pageOrder[pageOrder.indexOf(state.currentAnimationPage) + 1]
-            : pageOrder[pageOrder.indexOf(state.currentAnimationPage) - 1],
-      };
-    default:
-      return state;
-  }
-};
+import { pagesControllerReducer } from './utils';
 
 const PageControllerContext = createContext<PagesControllerContextData>(
   {} as PagesControllerContextData,
