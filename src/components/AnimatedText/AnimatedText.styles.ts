@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { TextProps } from './interfaces';
 
-export const DesciptionContainer = styled.div<TextProps>`
+export const AnimatedContainer = styled.div<TextProps>`
   flex: 1;
 
   display: flex;
@@ -83,48 +83,7 @@ export const DesciptionContainer = styled.div<TextProps>`
   }
 `;
 
-export const DesciptionH1 = styled.p<TextProps>`
-  text-align: center;
-  color: #ffffff;
-  font-size: 2em;
-
-  ${({ animationState, animationConfig }) => {
-    switch (animationState) {
-      case 'show-up':
-        return `animation: show-up
-          ${animationConfig?.showDuration || '1000ms'}
-          ${animationConfig?.showDelay || '100ms'}
-          ease forwards;`;
-      case 'show-down':
-        return `animation: show-up
-        ${animationConfig?.showDuration || '1000ms'}
-        ${animationConfig?.showDelay || '100ms'}
-        ease forwards;`;
-      case 'hide-up-vh':
-        return `animation: hide-up-vh
-          ${animationConfig?.hideDuration || '4000ms'}
-          ${animationConfig?.hideDelay || '2000ms'}
-          ease-in-out forwards;`;
-      case 'hide-up':
-        return `animation: hide-up
-          ${animationConfig?.hideDuration || '1000ms'}
-          ${animationConfig?.hideDelay || '1150ms'}
-          ease-in-out forwards;`;
-      case 'hide-down':
-        return `animation: hide-down
-          ${animationConfig?.hideDuration || '1000ms'}
-          ${animationConfig?.hideDelay || '1150ms'}
-          ease-in-out forwards;`;
-      default:
-        return `animation: show-up
-          ${animationConfig?.showDuration || '1000ms'}
-          ${animationConfig?.showDelay || '100ms'}
-          ease forwards;`;
-    }
-  }}
-`;
-
-export const DesciptionH2 = styled.p<TextProps>`
+export const AnimatedTextH1 = styled.p<TextProps>`
   text-align: center;
   color: #ffffff;
   font-weight: bold;
@@ -169,7 +128,48 @@ export const DesciptionH2 = styled.p<TextProps>`
   margin-bottom: 0.7em;
 `;
 
-export const DesciptionH3 = styled.p<TextProps>`
+export const AnimatedTextH2 = styled.p<TextProps>`
+  text-align: center;
+  color: #ffffff;
+  font-size: 2em;
+
+  ${({ animationState, animationConfig }) => {
+    switch (animationState) {
+      case 'show-up':
+        return `animation: show-up
+          ${animationConfig?.showDuration || '1000ms'}
+          ${animationConfig?.showDelay || '100ms'}
+          ease forwards;`;
+      case 'show-down':
+        return `animation: show-up
+        ${animationConfig?.showDuration || '1000ms'}
+        ${animationConfig?.showDelay || '100ms'}
+        ease forwards;`;
+      case 'hide-up-vh':
+        return `animation: hide-up-vh
+          ${animationConfig?.hideDuration || '4000ms'}
+          ${animationConfig?.hideDelay || '2000ms'}
+          ease-in-out forwards;`;
+      case 'hide-up':
+        return `animation: hide-up
+          ${animationConfig?.hideDuration || '1000ms'}
+          ${animationConfig?.hideDelay || '1150ms'}
+          ease-in-out forwards;`;
+      case 'hide-down':
+        return `animation: hide-down
+          ${animationConfig?.hideDuration || '1000ms'}
+          ${animationConfig?.hideDelay || '1150ms'}
+          ease-in-out forwards;`;
+      default:
+        return `animation: show-up
+          ${animationConfig?.showDuration || '1000ms'}
+          ${animationConfig?.showDelay || '100ms'}
+          ease forwards;`;
+    }
+  }}
+`;
+
+export const AnimatedTextH3 = styled.p<TextProps>`
   text-align: center;
   color: #ffffff;
   font-size: 0.8em;
@@ -210,7 +210,7 @@ export const DesciptionH3 = styled.p<TextProps>`
   }}
 `;
 
-export const DesciptionH4 = styled.p<TextProps>`
+export const AnimatedTextH4 = styled.p<TextProps>`
   text-align: center;
   color: #ffffff;
   font-size: 0.8em;

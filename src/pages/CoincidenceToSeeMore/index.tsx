@@ -1,7 +1,7 @@
 import React, { useCallback, useReducer } from 'react';
 
 import { usePageController } from '@/contexts/PagesController';
-import { pageHandleReducer } from '@pages/screens/common/utils';
+import { pageHandleReducer } from '@/components/PageTextAnimated/common/utils';
 import { CoincidencePageReducer } from './interfaces';
 import Main from './CoincidenceToSeeMore';
 

@@ -1,21 +1,11 @@
 import React from 'react';
-import { AnimationState } from '../interfaces';
-import {
-  DesciptionContainer,
-  DesciptionH2,
-  DesciptionH3,
-} from '../AnimatedText.styles';
 
-interface AnimatedParagraphProps {
-  animationType: AnimationState;
-  title?: string;
-  subtitle1?: string;
-  subtitle2?: string;
-  showDelay?: number;
-  showDuration?: number;
-  hideDelay?: number;
-  hideDuration?: number;
-}
+import { AnimatedParagraphProps } from './interfaces';
+import {
+  AnimatedContainer,
+  AnimatedTextH1,
+  AnimatedTextH3,
+} from '../../AnimatedText.styles';
 
 const AnimatedParagraph: React.FC<AnimatedParagraphProps> = ({
   title,
@@ -29,10 +19,10 @@ const AnimatedParagraph: React.FC<AnimatedParagraphProps> = ({
 }) => {
   const hasBreak: boolean = title?.indexOf('/') !== -1;
   return (
-    <DesciptionContainer animationState={animationType}>
+    <AnimatedContainer animationState={animationType}>
       <>
         {title && (
-          <DesciptionH2
+          <AnimatedTextH1
             animationState={animationType}
             animationConfig={{
               showDelay: `${showDelay}ms`,
@@ -51,10 +41,10 @@ const AnimatedParagraph: React.FC<AnimatedParagraphProps> = ({
             ) : (
               title
             )}
-          </DesciptionH2>
+          </AnimatedTextH1>
         )}
         {subtitle1 && (
-          <DesciptionH3
+          <AnimatedTextH3
             animationState={animationType}
             animationConfig={{
               showDelay: `${showDelay + 500}ms`,
@@ -64,10 +54,10 @@ const AnimatedParagraph: React.FC<AnimatedParagraphProps> = ({
             }}
           >
             {subtitle1}
-          </DesciptionH3>
+          </AnimatedTextH3>
         )}
         {subtitle2 && (
-          <DesciptionH3
+          <AnimatedTextH3
             animationState={animationType}
             animationConfig={{
               showDelay: `${showDelay + 1000}ms`,
@@ -77,10 +67,10 @@ const AnimatedParagraph: React.FC<AnimatedParagraphProps> = ({
             }}
           >
             {subtitle2}
-          </DesciptionH3>
+          </AnimatedTextH3>
         )}
       </>
-    </DesciptionContainer>
+    </AnimatedContainer>
   );
 };
 

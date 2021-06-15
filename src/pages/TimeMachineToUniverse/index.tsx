@@ -1,15 +1,19 @@
 import React, { useCallback, useReducer } from 'react';
 
 import { usePageController } from '@/contexts/PagesController';
-import { pageHandleReducer } from './utils';
+import { pageHandleReducer } from '@/components/PageTextAnimated/common/utils';
+import { TimeMachinePageReducer } from './interfaces';
 import Main from './TimeMachineToUniverse';
 
 const TimeMachineToUniverse: React.FC = () => {
-  const [state, dispatch] = useReducer(pageHandleReducer, {
-    animationState: 'show-up',
-    pageState: 'time-machine-intro',
-    history: ['time-machine-intro'],
-  });
+  const [state, dispatch] = useReducer<TimeMachinePageReducer>(
+    pageHandleReducer,
+    {
+      animationState: 'show-up',
+      pageState: 'time-machine-intro',
+      history: ['time-machine-intro'],
+    },
+  );
 
   const { setPage } = usePageController();
 

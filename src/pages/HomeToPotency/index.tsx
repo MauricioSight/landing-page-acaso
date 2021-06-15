@@ -1,33 +1,43 @@
-/* eslint-disable no-unused-expressions */
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useReducer } from 'react';
 
-import { AnimationState } from '@components/AnimatedText/interfaces';
 import { usePageController } from '@/contexts/PagesController';
-import { PageStatus } from './interfaces';
+import { pageHandleReducer } from '@/components/PageTextAnimated/common/utils';
+import { HomeToPotencyPageReducer } from './interfaces';
 import Main from './HomeToPotency';
 
 const HomeToPotency: React.FC = () => {
-  const [animationState, setAnimationState] =
-    useState<AnimationState>('show-up');
-  const [pageStatus, setPageStatus] = useState<PageStatus>('home');
+  const [state, dispatch] = useReducer<HomeToPotencyPageReducer>(
+    pageHandleReducer,
+    {
+      animationState: 'show-up',
+      pageState: 'home',
+      history: ['home'],
+    },
+  );
   const { setPage } = usePageController();
 
   const handleChangePage = useCallback(
     (page: number) => {
       switch (page) {
-        case 0:
-          setAnimationState('show-up');
-          break;
         case 1:
-          setAnimationState('hide-up-vh');
+          dispatch({
+            type: 'update-animation',
+            animation: 'hide-up-vh',
+          });
           setPage('potency');
           break;
         case 3:
-          setAnimationState('show-up');
-          setPageStatus('potency');
+          dispatch({
+            type: 'update-page-animation',
+            page: 'potency',
+            animation: 'show-up',
+          });
           break;
         case 4:
-          setAnimationState('hide-up');
+          dispatch({
+            type: 'update-animation',
+            animation: 'hide-up',
+          });
           break;
         default:
       }
@@ -35,13 +45,7 @@ const HomeToPotency: React.FC = () => {
     [setPage],
   );
 
-  return (
-    <Main
-      animationState={animationState}
-      pageStatus={pageStatus}
-      handleChangePage={handleChangePage}
-    />
-  );
+  return <Main state={state} handleChangePage={handleChangePage} />;
 };
 
 export default HomeToPotency;

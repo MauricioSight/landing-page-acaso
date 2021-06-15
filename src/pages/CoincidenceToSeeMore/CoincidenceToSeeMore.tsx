@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Coincidence from '@pages/screens/Coincidence';
-import SeeMore from '@pages/screens/SeeMore';
+import Coincidence from '@/components/PageTextAnimated/Coincidence';
+import SeeMore from '@/components/PageTextAnimated/SeeMore';
 import CoincidenceAnimationJson from '@assets/ACASO pt03.json';
 import PageController from '@components/PageController';
 import { COINCIDENCE_PAGE_BREAK_POINTS } from './constants';

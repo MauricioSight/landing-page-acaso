@@ -2,14 +2,13 @@ import React from 'react';
 
 import homeAnimationJson from '@assets/ACASO pt01.json';
 import PageController from '@/components/PageController';
-import Home from '@pages/screens/Home';
-import Potency from '@pages/screens/Potency';
+import Home from '@/components/PageTextAnimated/Home';
+import Potency from '@/components/PageTextAnimated/Potency';
 import { HOME_POTENCY_BREAK_POINTS } from './constants';
 import { HomeToPotencyProps } from './interfaces';
 
 const HomeToPotency: React.FC<HomeToPotencyProps> = ({
-  animationState,
-  pageStatus,
+  state,
   handleChangePage,
 }) => {
   return (
@@ -18,10 +17,10 @@ const HomeToPotency: React.FC<HomeToPotencyProps> = ({
       breakPoints={HOME_POTENCY_BREAK_POINTS}
       onChangePage={handleChangePage}
     >
-      {pageStatus === 'home' ? (
-        <Home animationState={animationState} />
+      {state.pageState === 'home' ? (
+        <Home {...state} />
       ) : (
-        <Potency animationState={animationState} />
+        <Potency {...state} />
       )}
     </PageController>
   );
