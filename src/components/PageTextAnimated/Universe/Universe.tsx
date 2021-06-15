@@ -2,9 +2,9 @@ import React from 'react';
 
 import {
   DesciptionContainer,
-  DesciptionH2,
   DesciptionH3,
 } from '@components/AnimatedText/AnimatedText.styles';
+import AnimatedParagraph from '@/components/AnimatedText/AnimatedParagraph';
 import { UniversePageMainProps } from './interfaces';
 import { Layer } from '../common/styles';
 
@@ -18,41 +18,15 @@ const Universe: React.FC<UniversePageMainProps> = ({
   return (
     <>
       <Layer>
-        <DesciptionContainer animationState={currentAnimationState}>
-          <DesciptionH2
-            animationState={currentAnimationState}
-            animationConfig={{
-              showDelay: '1150ms',
-              hideDelay: '700ms',
-              hideDuration: '1150ms',
-            }}
-            style={{ textShadow: 'none', fontSize: '3em', marginBottom: 0 }}
-          >
-            Construa seu
-            <br />
-            universo em ACASO
-          </DesciptionH2>
-          <DesciptionH3
-            animationState={currentAnimationState}
-            animationConfig={{
-              showDelay: '1650ms',
-              hideDelay: '700ms',
-              hideDuration: '1150ms',
-            }}
-          >
-            Monte galáxias de conexões e se aproxime de pessoas
-          </DesciptionH3>
-          <DesciptionH3
-            animationState={currentAnimationState}
-            animationConfig={{
-              showDelay: '2150ms',
-              hideDelay: '700ms',
-              hideDuration: '1150ms',
-            }}
-          >
-            Com potenciais em comum em qualquer assunto.
-          </DesciptionH3>
-        </DesciptionContainer>
+        <AnimatedParagraph
+          animationType={currentAnimationState}
+          title="Construa seu / universo em ACASO"
+          subtitle1="Monte galáxias de conexões e se aproxime de pessoas"
+          subtitle2="Com potenciais em comum em qualquer assunto."
+          showDelay={1150}
+          hideDelay={700}
+          hideDuration={1150}
+        />
       </Layer>
       {history.includes('universe-galaxy') && (
         <Layer>

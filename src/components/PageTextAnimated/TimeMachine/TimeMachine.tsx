@@ -1,9 +1,6 @@
 import React from 'react';
 
-import {
-  DesciptionContainer,
-  DesciptionH2,
-} from '@components/AnimatedText/AnimatedText.styles';
+import AnimatedParagraph from '@/components/AnimatedText/AnimatedParagraph';
 import { TimeMachinePageMainProps } from './interfaces';
 import { Layer } from '../common/styles';
 
@@ -14,70 +11,39 @@ const TimeMachine: React.FC<TimeMachinePageMainProps> = ({
   return (
     <>
       <Layer>
-        <DesciptionContainer
-          animationState={
+        <AnimatedParagraph
+          animationType={
             !history.includes('time-machine-future') ? 'show-up' : 'hide-up'
           }
-        >
-          <DesciptionH2
-            animationState={
-              !history.includes('time-machine-future') ? 'show-up' : 'hide-up'
-            }
-            animationConfig={{
-              showDelay: '200ms',
-              hideDelay: '200ms',
-              hideDuration: '1150ms',
-            }}
-            style={{ textShadow: 'none', fontSize: '3em' }}
-          >
-            Pessoas são como
-            <br />
-            Máquinas do tempo
-          </DesciptionH2>
-        </DesciptionContainer>
+          title="Pessoas são como / Máquinas do tempo"
+          showDelay={200}
+          hideDelay={200}
+          hideDuration={1150}
+        />
       </Layer>
       {history.includes('time-machine-future') ||
       history.includes('time-machine-needs') ? (
         <Layer>
-          <DesciptionContainer
-            animationState={
+          <AnimatedParagraph
+            animationType={
               !history.includes('time-machine-needs') ? 'show-up' : 'hide-up'
             }
-          >
-            <DesciptionH2
-              animationState={
-                !history.includes('time-machine-needs') ? 'show-up' : 'hide-up'
-              }
-              animationConfig={{
-                showDelay: '1150ms',
-                hideDelay: '200ms',
-                hideDuration: '1150ms',
-              }}
-              style={{ textShadow: 'none', fontSize: '3em' }}
-            >
-              Pessoas podem te ajudar
-              <br />a se conectar com o futuro
-            </DesciptionH2>
-          </DesciptionContainer>
+            title="Pessoas podem te ajudar / a se conectar com o futuro"
+            showDelay={1150}
+            hideDelay={200}
+            hideDuration={1150}
+          />
         </Layer>
       ) : null}
       {history.includes('time-machine-needs') && (
         <Layer>
-          <DesciptionContainer animationState={animationState}>
-            <DesciptionH2
-              animationState={animationState}
-              animationConfig={{
-                showDelay: '1150ms',
-                hideDelay: '0ms',
-                hideDuration: '1150ms',
-              }}
-              style={{ textShadow: 'none', fontSize: '3em' }}
-            >
-              Pessoas te conectam com
-              <br />
-              com tudo que você precisar
-            </DesciptionH2>
-          </DesciptionContainer>
+          <AnimatedParagraph
+            animationType={animationState}
+            title="Pessoas te conectam com / com tudo que você precisar"
+            showDelay={1150}
+            hideDelay={0}
+            hideDuration={1150}
+          />
         </Layer>
       )}
     </>
