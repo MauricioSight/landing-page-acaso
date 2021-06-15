@@ -26,7 +26,7 @@ const Universe: React.FC<UniversePageMainProps> = ({
               hideDelay: '700ms',
               hideDuration: '1150ms',
             }}
-            style={{ textShadow: 'none', fontSize: '3em' }}
+            style={{ textShadow: 'none', fontSize: '3em', marginBottom: 0 }}
           >
             Construa seu
             <br />
