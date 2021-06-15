@@ -4,7 +4,7 @@ import {
   PageHandleReducer,
   PageHandleAction,
   PageHandleProps,
-} from '@pages/screens/common/interfaces';
+} from '@/components/PageTextAnimated/common/interfaces';
 
 const pageState = {
   'coincidence-intro': 'coincidence',

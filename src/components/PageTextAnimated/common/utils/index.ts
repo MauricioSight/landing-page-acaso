@@ -1,7 +1,7 @@
 import {
   PageHandleAction,
   PageHandleData,
-} from '@/pages/screens/common/interfaces';
+} from '@/components/PageTextAnimated/common/interfaces';
 
 export function pageHandleReducer<T, J>(
   state: PageHandleData<T, J>,

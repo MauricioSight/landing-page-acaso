@@ -2,8 +2,8 @@ import React from 'react';
 
 import homeAnimationJson from '@assets/ACASO pt01.json';
 import PageController from '@/components/PageController';
-import Home from '@pages/screens/Home';
-import Potency from '@pages/screens/Potency';
+import Home from '@/components/PageTextAnimated/Home';
+import Potency from '@/components/PageTextAnimated/Potency';
 import { HOME_POTENCY_BREAK_POINTS } from './constants';
 import { HomeToPotencyProps } from './interfaces';
 

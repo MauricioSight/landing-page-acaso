@@ -1,7 +1,7 @@
 import React from 'react';
 
-import TimeMachine from '@pages/screens/TimeMachine';
-import Universe from '@pages/screens/Universe';
+import TimeMachine from '@/components/PageTextAnimated/TimeMachine';
+import Universe from '@/components/PageTextAnimated/Universe';
 import MachineAnimationJson from '@assets/ACASO pt02.json';
 import PageController from '@/components/PageController';
 import { TIME_MACHINE_PAGE_BREAK_POINTS } from './constants';
