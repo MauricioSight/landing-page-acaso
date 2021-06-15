@@ -16,6 +16,7 @@ const renderNavItem = (
   currentPage: PageEnum,
   onNavegate: (goToPage: PageEnum) => void,
 ) => {
+  if (page === 'see-more') return null;
   return (
     <NavItem
       key={page}

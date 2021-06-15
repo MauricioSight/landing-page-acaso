@@ -11,6 +11,7 @@ export const pageEnum = {
   'time-machine': 'Máquina do tempo',
   universe: 'Universo',
   coincidence: 'Concorrência',
+  'see-more': 'Veja mais',
 };
 export type PageEnum = keyof typeof pageEnum;
 
