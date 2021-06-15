@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { NavBarProps, PageEnum, pageEnum } from '../../interfaces';
 import NavItem from '../NavItem';
 import {
   Container,
@@ -10,15 +11,34 @@ import {
   TransparentButton,
 } from './DesktopNavBar.styles';
 
-const DesktopNavBar: React.FC = () => {
+const renderNavItem = (
+  page: PageEnum,
+  currentPage: PageEnum,
+  onNavegate: (goToPage: PageEnum) => void,
+) => {
+  return (
+    <NavItem
+      key={page}
+      isShowing={currentPage === page}
+      onNavegate={() => onNavegate(page)}
+    >
+      {pageEnum[page]}
+    </NavItem>
+  );
+};
+
+const DesktopNavBar: React.FC<NavBarProps> = ({ currentPage, onNavegate }) => {
+  const pages = Object.keys(pageEnum);
+
   return (
     <Container>
       <Nav>
         <NavLogo>ACASO</NavLogo>
-        <NavItem>Sua potência</NavItem>
-        <NavItem>Máquina do tempo</NavItem>
-        <NavItem>Universo</NavItem>
-        <NavItem>Concorrência</NavItem>
+        {pages.map((key, index) =>
+          index === 0
+            ? null
+            : renderNavItem(key as PageEnum, currentPage, onNavegate),
+        )}
       </Nav>
       <ButtonsContainer>
         <TransparentButton>Contato</TransparentButton>

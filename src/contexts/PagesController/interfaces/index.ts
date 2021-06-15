@@ -5,12 +5,12 @@ const pageAnimationEnum = {
 };
 export type PageAnimationEnum = keyof typeof pageAnimationEnum;
 
-const pageEnum = {
-  home: 'home',
-  potency: 'potency',
-  'time-machine': 'time-machine',
-  universe: 'universe',
-  coincidence: 'coincidence',
+export const pageEnum = {
+  home: 'ACASO',
+  potency: 'Sua potência',
+  'time-machine': 'Máquina do tempo',
+  universe: 'Universo',
+  coincidence: 'Concorrência',
 };
 export type PageEnum = keyof typeof pageEnum;
 
