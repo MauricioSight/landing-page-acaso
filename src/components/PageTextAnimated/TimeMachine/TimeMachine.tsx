@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AnimatedParagraph from '@/components/AnimatedText/AnimatedParagraph';
+import AnimatedParagraph from '@/components/AnimatedText/components/AnimatedParagraph';
 import { TimeMachinePageMainProps } from './interfaces';
 import { Layer } from '../common/styles';
 

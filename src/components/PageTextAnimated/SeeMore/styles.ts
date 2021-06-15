@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { BaseButtonStyle } from '@/components/BaseButton/BaseButton.styles';
 
-export const AnimatedContainer = styled.div`
+export const AnimatedButtonContainer = styled.div`
   transform: translatey(1em);
   opacity: 0;
 

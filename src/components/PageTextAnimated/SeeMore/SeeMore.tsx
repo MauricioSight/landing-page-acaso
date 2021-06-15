@@ -1,15 +1,15 @@
 import React from 'react';
 
 import {
-  DesciptionContainer,
-  DesciptionH2,
+  AnimatedContainer,
+  AnimatedTextH1,
 } from '@/components/AnimatedText/AnimatedText.styles';
-import { AnimatedContainer, Button } from './styles';
+import { AnimatedButtonContainer, Button } from './styles';
 
 const SeeMore: React.FC = () => {
   return (
-    <DesciptionContainer animationState="show-up">
-      <DesciptionH2
+    <AnimatedContainer animationState="show-up">
+      <AnimatedTextH1
         animationState="show-up"
         animationConfig={{
           showDelay: '1150ms',
@@ -17,8 +17,8 @@ const SeeMore: React.FC = () => {
         style={{ textShadow: 'none', fontSize: '1.6em', marginBottom: 0 }}
       >
         Explore o
-      </DesciptionH2>
-      <DesciptionH2
+      </AnimatedTextH1>
+      <AnimatedTextH1
         animationState="show-up"
         animationConfig={{
           showDelay: '1650ms',
@@ -26,11 +26,11 @@ const SeeMore: React.FC = () => {
         style={{ fontSize: '7.5em', fontWeight: 800, letterSpacing: 0 }}
       >
         ACASO
-      </DesciptionH2>
-      <AnimatedContainer>
+      </AnimatedTextH1>
+      <AnimatedButtonContainer>
         <Button>Iniciar</Button>
-      </AnimatedContainer>
-    </DesciptionContainer>
+      </AnimatedButtonContainer>
+    </AnimatedContainer>
   );
 };
 

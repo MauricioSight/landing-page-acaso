@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AnimatedParagraph from '@/components/AnimatedText/AnimatedParagraph';
+import AnimatedParagraph from '@/components/AnimatedText/components/AnimatedParagraph';
 import { PotencyPageMainProps } from './interfaces';
 
 const Portency: React.FC<PotencyPageMainProps> = ({ animationState }) => {
