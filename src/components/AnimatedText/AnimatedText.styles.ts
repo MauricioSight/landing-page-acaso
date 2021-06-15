@@ -19,6 +19,8 @@ export const DesciptionContainer = styled.div<TextProps>`
           return 'transform: translatey(1em); opacity: 0;';
         case 'show-down':
           return 'transform: translatey(-100vh); opacity: 1;';
+        case 'hide-up-vh':
+          return 'transform: translatey(0em); opacity: 1;';
         case 'hide-up':
           return 'transform: translatey(0em); opacity: 1;';
         case 'hide-down':
@@ -49,12 +51,23 @@ export const DesciptionContainer = styled.div<TextProps>`
     }
   }
 
-  @keyframes hide-up {
+  @keyframes hide-up-vh {
     from {
       transform: translatey(0em);
     }
     to {
       transform: translatey(-100vh);
+    }
+  }
+
+  @keyframes hide-up {
+    from {
+      transform: translatey(0em);
+      opacity: 1;
+    }
+    to {
+      transform: translatey(-0.7em);
+      opacity: 0;
     }
   }
 
@@ -64,7 +77,7 @@ export const DesciptionContainer = styled.div<TextProps>`
       opacity: 1;
     }
     to {
-      transform: translatey(-0.7em);
+      transform: translatey(0.7em);
       opacity: 0;
     }
   }
@@ -87,10 +100,15 @@ export const DesciptionH1 = styled.div<TextProps>`
         ${animationConfig?.showDuration || '1000ms'}
         ${animationConfig?.showDelay || '100ms'}
         ease forwards;`;
-      case 'hide-up':
-        return `animation: hide-up
+      case 'hide-up-vh':
+        return `animation: hide-up-vh
           ${animationConfig?.hideDuration || '4000ms'}
           ${animationConfig?.hideDelay || '2000ms'}
+          ease-in-out forwards;`;
+      case 'hide-up':
+        return `animation: hide-up
+          ${animationConfig?.hideDuration || '1000ms'}
+          ${animationConfig?.hideDelay || '1150ms'}
           ease-in-out forwards;`;
       case 'hide-down':
         return `animation: hide-down
@@ -125,10 +143,15 @@ export const DesciptionH2 = styled.div<TextProps>`
           ${animationConfig?.showDuration || '1000ms'}
           ${animationConfig?.showDelay || '600ms'}
           ease forwards;`;
-      case 'hide-up':
-        return `animation: hide-up
+      case 'hide-up-vh':
+        return `animation: hide-up-vh
           ${animationConfig?.hideDuration || '4000ms'}
           ${animationConfig?.hideDelay || '2100ms'}
+          ease-in-out forwards;`;
+      case 'hide-up':
+        return `animation: hide-up
+          ${animationConfig?.hideDuration || '1000ms'}
+          ${animationConfig?.hideDelay || '1050ms'}
           ease-in-out forwards;`;
       case 'hide-down':
         return `animation: hide-down
@@ -163,10 +186,15 @@ export const DesciptionH3 = styled.div<TextProps>`
           ${animationConfig?.showDuration || '1000ms'}
           ${animationConfig?.showDelay || '1100ms'}
           ease forwards;`;
-      case 'hide-up':
-        return `animation: hide-up
+      case 'hide-up-vh':
+        return `animation: hide-up-vh
           ${animationConfig?.hideDuration || '4000ms'}
           ${animationConfig?.hideDelay || '2150ms'}
+          ease-in-out forwards;`;
+      case 'hide-up':
+        return `animation: hide-up
+          ${animationConfig?.hideDuration || '1000ms'}
+          ${animationConfig?.hideDelay || '1000ms'}
           ease-in-out forwards;`;
       case 'hide-down':
         return `animation: hide-down
@@ -199,10 +227,15 @@ export const DesciptionH4 = styled.div<TextProps>`
           ${animationConfig?.showDuration || '1000ms'}
           ${animationConfig?.showDelay || '1600ms'}
           ease forwards;`;
-      case 'hide-up':
-        return `animation: hide-up
+      case 'hide-up-vh':
+        return `animation: hide-up-vh
           ${animationConfig?.hideDuration || '4000ms'}
           ${animationConfig?.hideDelay || '2150ms'}
+          ease-in-out forwards;`;
+      case 'hide-up':
+        return `animation: hide-up
+          ${animationConfig?.hideDuration || '1000ms'}
+          ${animationConfig?.hideDelay || '1000ms'}
           ease-in-out forwards;`;
       case 'hide-down':
         return `animation: hide-down

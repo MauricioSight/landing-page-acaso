@@ -18,7 +18,7 @@ const HomeToPotency: React.FC = () => {
         setAnimationState('show-up');
         break;
       case 1:
-        setAnimationState('hide-up');
+        setAnimationState('hide-up-vh');
         break;
       case 3:
         setAnimationState('show-up');
@@ -26,7 +26,7 @@ const HomeToPotency: React.FC = () => {
         setPage('potency');
         break;
       case 4:
-        setAnimationState('hide-down');
+        setAnimationState('hide-up');
         break;
       default:
     }
