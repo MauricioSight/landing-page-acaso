@@ -1,38 +1,53 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useReducer } from 'react';
 
-import { AnimationState } from '@/components/AnimatedText/interfaces';
 import { usePageController } from '@/contexts/PagesController';
-import { PageState } from './interfaces';
+import { pageHandleReducer } from './utils';
 import Main from './TimeMachineToUniverse';
 
 const TimeMachineToUniverse: React.FC = () => {
-  const [animationState, setAnimationState] =
-    useState<AnimationState>('show-up');
-  const [pageState, setPageState] = useState<PageState>('time-machine-intro');
+  const [state, dispatch] = useReducer(pageHandleReducer, {
+    animationState: 'show-up',
+    pageState: 'time-machine-intro',
+    history: ['time-machine-intro'],
+  });
+
   const { setPage } = usePageController();
 
   const handleChangePage = useCallback(
     (page: number) => {
       switch (page) {
-        case 0:
-          setAnimationState('show-up');
-          break;
         case 1:
-          setPageState('time-machine-future');
+          dispatch({
+            type: 'update-page',
+            page: 'time-machine-future',
+          });
           break;
         case 2:
-          setPageState('time-machine-needs');
+          dispatch({
+            type: 'update-page',
+            page: 'time-machine-needs',
+          });
           break;
         case 4:
+          dispatch({
+            type: 'update-page-animation',
+            page: 'time-machine-universe-intro',
+            animation: 'hide-down',
+          });
           setPage('universe');
-          setAnimationState('hide-down');
-          setPageState('time-machine-universe-intro');
           break;
         case 5:
-          setPageState('universe-galaxy');
+          dispatch({
+            type: 'update-page-animation',
+            page: 'universe-galaxy',
+            animation: 'show-up',
+          });
           break;
         case 6:
-          setAnimationState('show-up');
+          dispatch({
+            type: 'update-animation',
+            animation: 'hide-up-vh',
+          });
           break;
         default:
       }
@@ -40,13 +55,7 @@ const TimeMachineToUniverse: React.FC = () => {
     [setPage],
   );
 
-  return (
-    <Main
-      animationState={animationState}
-      pageState={pageState}
-      handleChangePage={handleChangePage}
-    />
-  );
+  return <Main state={state} handleChangePage={handleChangePage} />;
 };
 
 export default TimeMachineToUniverse;

@@ -1,13 +1,11 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { UniversePageProps } from './interfaces';
+import Main from './Universe';
 
-const Universe: React.FC = () => {
-  return (
-    <Container>
-      <h1>Universe</h1>
-    </Container>
-  );
+const Universe: React.FC<UniversePageProps> = (props) => {
+  console.log(props);
+  return <Main {...props} />;
 };
 
 export default Universe;

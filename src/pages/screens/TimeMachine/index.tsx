@@ -1,19 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-import { TimeMachinePageProps, PageState } from './interfaces';
+import { TimeMachinePageProps } from './interfaces';
 import Main from './TimeMachine';
 
-const TimeMachine: React.FC<TimeMachinePageProps> = ({
-  pageState,
-  animationState,
-}) => {
-  const [history, setHistory] = useState<PageState[]>([]);
-
-  useEffect(() => {
-    setHistory([...history, pageState]);
-  }, [pageState]);
-
-  return <Main history={history} animationState={animationState} />;
+const TimeMachine: React.FC<TimeMachinePageProps> = (props) => {
+  return <Main {...props} />;
 };
 
 export default TimeMachine;

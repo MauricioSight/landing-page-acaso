@@ -3,10 +3,10 @@ import { AnimationState } from '@components/AnimatedText/interfaces';
 
 export type { PageState };
 
-export interface TimeMachinePageProps {
+export interface UniversePageProps {
   animationState: AnimationState;
   pageState: PageState;
   history: PageState[];
 }
 
-export type TimeMachinePageMainProps = TimeMachinePageProps;
+export type UniversePageMainProps = UniversePageProps;

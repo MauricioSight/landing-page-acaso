@@ -8,8 +8,7 @@ import { TIME_MACHINE_PAGE_BREAK_POINTS } from './constants';
 import { TimeMachineToUniverseProps } from './interfaces';
 
 const TimeMachineToUniverse: React.FC<TimeMachineToUniverseProps> = ({
-  animationState,
-  pageState,
+  state,
   handleChangePage,
 }) => {
   return (
@@ -18,10 +17,8 @@ const TimeMachineToUniverse: React.FC<TimeMachineToUniverseProps> = ({
       breakPoints={TIME_MACHINE_PAGE_BREAK_POINTS}
       onChangePage={handleChangePage}
     >
-      {pageState.includes('time-machine') && (
-        <TimeMachine animationState={animationState} pageState={pageState} />
-      )}
-      {pageState.includes('universe') && <Universe />}
+      {state.pageState.includes('time-machine') && <TimeMachine {...state} />}
+      {state.pageState.includes('universe') && <Universe {...state} />}
     </PageController>
   );
 };

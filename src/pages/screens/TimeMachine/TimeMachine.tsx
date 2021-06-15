@@ -5,7 +5,7 @@ import {
   DesciptionH2,
 } from '@components/AnimatedText/AnimatedText.styles';
 import { TimeMachinePageMainProps } from './interfaces';
-import { Layer } from './styles';
+import { Layer } from '../common/styles';
 
 const TimeMachine: React.FC<TimeMachinePageMainProps> = ({
   history,
